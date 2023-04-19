@@ -16,7 +16,9 @@
             <td><%= @book.body %></td>
             <td>
               <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %>
-            </td>Destroy<td>
+            </td>
+            <td>
+              <%= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-sm btn-danger" %>
             </td>
           </tr>
         </tbody>
