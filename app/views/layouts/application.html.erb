@@ -20,13 +20,13 @@
           <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li>
-              <%= link_to root_path, class: "nav-link text-light" do %>
+              <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
                 <i class="fas fa-home"></i>
                 Home
               <% end %>
             </li>
             <li>
-              <%= link_to users_path(current_user.id), class: "nav-link text-light" do %>
+              <%= link_to users_path, class: "nav-link text-light" do %>
                 <i class="fas fa-users"></i>
                 Users
               <% end %>
@@ -75,9 +75,7 @@
     </header>
 
     <main>
-      <div>
-        <%= flash[:notice] %>
-      </div>
+      <p id="notice"><%= flash[:notice] %></p>
       <%= yield %>
     </main>
 
